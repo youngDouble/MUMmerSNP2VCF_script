@@ -3,7 +3,7 @@ Align haplotype genomes (bacterial or some viruses) using MUMmer to obtain SNPs/
 
 ## My running environment (pass-test):
 
-System:	(centos 7, 8; Ubuntu 10.2.* ~ Ubuntu 20.04.4 LTS)
+System:	(centos 7, 8; Ubuntu 10.02.* ~ Ubuntu 20.04.4 LTS)
 
 MUMmer 4.0.0beta2	http://mummer.sourceforge.net/
 
