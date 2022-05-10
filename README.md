@@ -18,3 +18,13 @@ Python 3.8.1
 
 `MUMmerSNPs2VCF.py`	Convert the output of MUMmer to VCF format. `MUMmer_snp_calling_no_repeat.sh`, `MUMmer_snp_calling_repeat.sh` will automatically call this script.
 
+
+
+# Citation
+
+If you use MUMmerSNP2VCF_script  tools in your research, please cite:
+
+**Tracing genetic signatures of bat‐to‐human coronaviruses and early transmission of North American SARS‐CoV‐2.**
+
+ Ou X, Yang Z, Zhu D, et al. . Transboundary and Emerging Diseases, 2021. https://doi.org/10.1111/tbed.14148
+
