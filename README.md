@@ -18,6 +18,8 @@ Python 3.8.1
 
 `MUMmerSNPs2VCF.py`	Convert the output of MUMmer to VCF format. `MUMmer_snp_calling_no_repeat.sh`, `MUMmer_snp_calling_repeat.sh` will automatically call this script.
 
+`cluster.py` Cluster samples based on SNP distances.
+
 
 
 # Citation
