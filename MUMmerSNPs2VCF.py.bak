@@ -90,7 +90,7 @@ with open (input_file,"r") as INPUT:
             pos = line_list[0]
             allele_ref = line_list[1]
             allele_alt = line_list[2]
-            # remove the  variants containning N base
+            # remove the  variant containning N base
             if (("N"  in allele_ref ) or ("n"  in allele_ref) and \
                     ("N"  in allele_alt) and ("n"  in allele_alt)):
                 continue
