@@ -1,9 +1,12 @@
 #!/bin/bash
 set -e
 
+# 设置程序参数的缺省值，少用参数即可运行
 # Default parameter
+#ref_seq=input.txt
+#query_seq=output.txt
 
-
+# 程序功能描述，每次必改程序名、版本、时间等；版本更新要记录清楚，一般可用-h/-?来显示这部分
 # Function for script description and usage
 usage()
 {
@@ -20,6 +23,7 @@ Need to install mummer in advance and write to PATH
 Version 1.0 2020/03/15
 
 
+# 参数描述，写清功能的缺省值
 OPTIONS:
     -r Reference sequence file, fasta format, recommend must give
     -q Query sequence file, fasta format, recommend must give
@@ -30,7 +34,7 @@ Example:
 EOF
 }
 
-
+# 解释命令行参数，是不是很面熟，其实是调用了perl语言的getopts包，
 # Analysis parameter
 while getopts "h:r:q:" OPTION
 do
@@ -67,7 +71,7 @@ query_seq_tem=${query_seq##*/}
 echo -e "$query_seq_tem" 
 
 ################################
-# excluding SNPs contained in repeats region
+# excluding SNPs contained in repeats
 
 prefix=${ref_seq_tem%.*}_${query_seq_tem%.*}_mask_repeat
 
@@ -76,7 +80,7 @@ nucmer --prefix=$prefix  $ref_seq $query_seq
 show-snps -Clr   -x 1  -T ${prefix}.delta > ${prefix}.snps
 
 ################################
-# including SNPs contained in one of repeats region, conflicting repeat copies will first be eliminated with delta-filter
+# including SNPs contained in one of repeats, conflicting repeat copies will first be eliminated with delta-filter
 
 #prefix=${ref_seq_tem%.*}_${query_seq_tem%.*}
 
@@ -235,4 +239,5 @@ show-snps -Clr   -x 1  -T ${prefix}.delta > ${prefix}.snps
 #######conver snps to vcf
 #chmod +x ./MUMmerSNPs2VCF.py 
 MUMmerSNPs2VCF.py ${prefix}.snps ${prefix}.snps.vcf
+/bin/rm  ${prefix}.delta ${prefix}.snps
 #rm MUMmerSNPs2VCF.py 
